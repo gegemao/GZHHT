@@ -1,27 +1,29 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Login from '../views/Login'
+import guanli from '../views/points/guanli'
+import zjiang from '../views/points/zjiang'
+import cmodel from '../views/custom/cmodel'
+import custcreat from '../views/custom/custcreat'
+import phcard from '../views/custom/phcard'
+import phcreat from '../views/custom/phcreat'
+import yulu from '../views/yulu'
+import setting from '../views/setting'
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
 
-const router = new VueRouter({
-  routes
+export default new VueRouter({
+  routes:[
+    {path:'',redirect:'/login'},
+    {path:'/login',component:Login},
+    {path:'/guanli',component:guanli},
+    {path:'/zjiang',component:zjiang},
+    {path:'/cmodel',component:cmodel},
+    {path:'/custcreat',component:custcreat},
+    {path:'/phcard',component:phcard},
+    {path:'/phcreat',component:phcreat},
+    {path:'/yulu',component:yulu},
+    {path:'/setting',component:setting}
+  ]
 })
-
-export default router
